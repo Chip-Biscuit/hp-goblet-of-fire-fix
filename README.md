@@ -13,6 +13,10 @@ default for resolution is 2 (1920 x 1080)
 
 defualt for aspect ratio is 1 which is (16:9) 
 
+if you would like to leave feedback please use the form provided:
+
+https://docs.google.com/forms/d/e/1FAIpQLSfB_JaV0byMWQr69lJmLK1ge9vRrBQQM7TqqucLpAp_6aIyBA/viewform?usp=sharing
+
 brought to you by Fix Enhancers 
 
 [this fix as it stands is a beta and the game is still being looked into so future updates will be posted so keep an eye out] 
