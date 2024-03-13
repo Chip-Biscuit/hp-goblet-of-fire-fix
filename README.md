@@ -11,7 +11,7 @@ Default for resolution is 2 (1920 x 1080)
 
 Default for aspect ratio is 1 which is (16:9) 
 
-if you would like to leave feedback please use the form provided:
+if you would like to leave feedback or submit a bug please use the form provided:
 
 https://docs.google.com/forms/d/e/1FAIpQLSfB_JaV0byMWQr69lJmLK1ge9vRrBQQM7TqqucLpAp_6aIyBA/viewform?usp=sharing
 
