@@ -722,7 +722,7 @@ HRESULT m_IDirect3DDevice9Ex::EndScene()
     return ProxyInterface->EndScene();
 }
 
-void ForceWindowed(D3DPRESENT_PARAMETERS* pPresentationParameters, D3DDISPLAYMODEEX* pFullscreenDisplayMode = NULL)
+void ForceWindowed(D3DPRESENT_PARAMETERS* pPresentationParameters, D3DDISPLAYMODEEX* pFullscreenDisplayMode = nullptr)
 {
     HWND hwnd = pPresentationParameters->hDeviceWindow ? pPresentationParameters->hDeviceWindow : g_hFocusWindow;
     HMONITOR monitor = MonitorFromWindow((!bUsePrimaryMonitor && hwnd) ? hwnd : GetDesktopWindow(), MONITOR_DEFAULTTONEAREST);
@@ -742,15 +742,11 @@ void ForceWindowed(D3DPRESENT_PARAMETERS* pPresentationParameters, D3DDISPLAYMOD
     }
 
     pPresentationParameters->Windowed = 1;
-
-    // This must be set to default (0) on windowed mode as per D3D9 spec
     pPresentationParameters->FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;
 
-    // If exists, this must match the rate in PresentationParameters
     if (pFullscreenDisplayMode != NULL)
         pFullscreenDisplayMode->RefreshRate = D3DPRESENT_RATE_DEFAULT;
 
-    // This flag is not available on windowed mode as per D3D9 spec
     pPresentationParameters->PresentationInterval &= ~D3DPRESENT_DONOTFLIP;
 
     if (hwnd != NULL)
@@ -797,6 +793,18 @@ void ForceWindowed(D3DPRESENT_PARAMETERS* pPresentationParameters, D3DDISPLAYMOD
             }
         }
         SetWindowPos(hwnd, bAlwaysOnTop ? HWND_TOPMOST : HWND_NOTOPMOST, left, top, cx, cy, uFlags);
+
+        // Release the cursor confinement when the game window loses focus
+        if (GetForegroundWindow() != hwnd)
+            ClipCursor(nullptr);
+        else {
+            // Clip the cursor to the game window
+            RECT windowRect;
+            GetClientRect(hwnd, &windowRect);
+            ClientToScreen(hwnd, reinterpret_cast<POINT*>(&windowRect.left));
+            ClientToScreen(hwnd, reinterpret_cast<POINT*>(&windowRect.right));
+            ClipCursor(&windowRect);
+        }
     }
 }
 
