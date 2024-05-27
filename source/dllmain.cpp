@@ -532,6 +532,83 @@ void PerformHexEdits5() {
 // 
 //=======================================================================================================================================================================================
 
+//=======================================================================================================================================================================================
+// chip - 6: fov
+
+// Function to read the float value from the INI file and convert it to float
+float ReadFloatFromINI(const char* section, const char* key, const char* iniPath) {
+    int intValue = GetPrivateProfileIntA(section, key, 0, iniPath);
+    return static_cast<float>(intValue);
+}
+
+// Function to perform the hex edit
+void PerformHexEdit6() {
+    // INI file path
+    char path[MAX_PATH];
+    HMODULE hm = NULL;
+    if (!GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (LPCSTR)&Direct3DCreate9, &hm)) {
+        DX_ERROR("Failed to get module handle.")
+            return;
+    }
+    if (!GetModuleFileNameA(hm, path, sizeof(path))) {
+        DX_ERROR("Failed to get module file name.")
+            return;
+    }
+    char* lastBackslash = strrchr(path, '\\');
+    if (lastBackslash == NULL) {
+        DX_ERROR("Invalid module file path.")
+            return;
+    }
+    strcpy(lastBackslash + 1, "d3d9.ini");
+
+    // Read the new float value from the INI file
+    float floatNewValue = ReadFloatFromINI("FOV", "fov", path);
+    if (floatNewValue == 0) {
+        DX_ERROR("Failed to read float value from INI file.")
+            return;
+    }
+
+    // Define the offset to write the new float value
+    DWORD offset = 0x007494FC;
+
+    // Open the process to write memory
+    HANDLE hProcess = OpenProcess(PROCESS_VM_WRITE | PROCESS_VM_OPERATION, FALSE, GetCurrentProcessId());
+    if (hProcess == NULL) {
+        DX_ERROR("Failed to open process.")
+            return;
+    }
+
+    // Change memory protection to allow writing
+    DWORD oldProtect;
+    if (!VirtualProtectEx(hProcess, reinterpret_cast<LPVOID>(offset), sizeof(float), PAGE_EXECUTE_READWRITE, &oldProtect)) {
+        DX_ERROR("Failed to change memory protection.")
+            CloseHandle(hProcess);
+        return;
+    }
+
+    // Write the new value to memory
+    if (!WriteProcessMemory(hProcess, reinterpret_cast<LPVOID>(offset), &floatNewValue, sizeof(float), NULL)) {
+        DX_ERROR("Failed to write memory.")
+            CloseHandle(hProcess);
+        return;
+    }
+
+    // Restore original protection
+    DWORD dummy;
+    if (!VirtualProtectEx(hProcess, reinterpret_cast<LPVOID>(offset), sizeof(float), oldProtect, &dummy)) {
+        DX_ERROR("Failed to restore memory protection.")
+            CloseHandle(hProcess);
+        return;
+    }
+
+    DX_PRINT("Value successfully updated.")
+
+        CloseHandle(hProcess);
+}
+
+// chip - 6: fov
+//=======================================================================================================================================================================================
+
 void HookModule(HMODULE hmod);
 
 class FrameLimiter
@@ -1419,6 +1496,8 @@ bool WINAPI DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)
             PerformHexEdits4();
 
             PerformHexEdits5();
+
+            PerformHexEdit6();
 
         }
 
