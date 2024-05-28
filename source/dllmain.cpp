@@ -324,7 +324,7 @@ void PerformHexEdit3(LPBYTE lpAddress, DWORD moduleSize) {
     // Define the edits
     std::vector<HexEdit3> edits3 = {
         // FPS unlock
-        { { 0x20, 0x42, 0x00, 0x00, 0x70, 0x42, 0x00, 0x00, 0x8C, 0x42 }, { 0x00, 0x00 }, 4 },
+        { { 0x20, 0x42, 0x00, 0x00, 0x70, 0x42, 0x00, 0x00, 0x8C, 0x42 }, { 0xF0, 0x42 }, 4 },
     };
 
     // Iterate through the edits
@@ -379,7 +379,7 @@ void PerformHexEdits3() {
 // 
 //=======================================================================================================================================================================================
 
-// chip - 3: high resolution crash fix 
+// chip - 4: high resolution crash fix 
 
 // Function to perform the hex edit
 void PerformHexEdit4(LPBYTE lpAddress, DWORD moduleSize) {
@@ -393,7 +393,7 @@ void PerformHexEdit4(LPBYTE lpAddress, DWORD moduleSize) {
     // Define the edits
     std::vector<HexEdit4> edits4 = {
         // high resolution crash patch
-        { { 0x0F, 0x85, 0xC1, 0x07, 0x00, 0x00, 0xA1, 0xD0, 0xFF, 0x92 }, { 0x90, 0xE9 }, 0 },
+        { { 0x0F, 0x85, 0xC1, 0x07, 0x00, 0x00, 0xA1, 0xD0, 0xFF, 0x92, 0x00, 0x3B, 0xC1, 0x74, 0x0C, 0x81 }, { 0x90, 0xE9 }, 0 },
     };
 
     // Iterate through the edits
@@ -444,8 +444,8 @@ void PerformHexEdits4() {
     PerformHexEdit4(lpAddress, moduleSize);
 }
 
-// chip - 3: high resolution crash fix 
-//=======================================================================================================================================================================================
+// chip - 4: high resolution crash fix 
+//======================================================================================================================================================================================
 
 //=======================================================================================================================================================================================
 
@@ -1499,6 +1499,7 @@ bool WINAPI DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)
 
             PerformHexEdit6();
 
+           
         }
 
         //chip
