@@ -12,6 +12,8 @@ Default for resolution is 2 (1920 x 1080)
 
 Default for fov is (0) origional 114 you can replace 0 with your number higher than 114 will zoom it out in game.
 
+Default for fpsanimation is 0 which is off or the origional game animation speed, we have tested the game fully and if you set this to 1 or 2 you can play through almost all of the game but one blubotuber is broken so you cant 100% the game so change it at your own risk.
+
 Default for aspect ratio is 1 which is (16:9) 
 
 if you would like to leave feedback or submit a bug please use the form provided:
