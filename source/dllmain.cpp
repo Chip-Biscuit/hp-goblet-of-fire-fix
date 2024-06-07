@@ -449,63 +449,73 @@ void PerformHexEdits4() {
 
 //=======================================================================================================================================================================================
 
-// chip - 5: fps animations
+// chip - 5: animation fps
 
-// Function to perform the hex edit
-void PerformHexEdit5(LPBYTE lpAddress, DWORD moduleSize) {
-    // Define the patterns to search for and their corresponding new values
-    struct HexEdit5 {
-        std::vector<BYTE> pattern;
-        std::vector<BYTE> newValue;
-        size_t offset; // Offset of the byte to modify within the pattern
-    };
+const std::vector<BYTE> commonHexEdit5 = { 0xA1, 0x7C, 0x33, 0x7C, 0x00, 0x50, 0x68, 0x00, 0x00, 0xA0, 0x41, 0xE8, 0x40, 0x67, 0xFA, 0xFF };
 
-    // Define the edits
-    std::vector<HexEdit5> edits5 = {
-        // FPS animations 30fps
-        { { 0xA1, 0x7C, 0x33, 0x7C, 0x00, 0x50, 0x68, 0x00, 0x00, 0xA0, 0x41, 0xE8, 0x40, 0x67, 0xFA, 0xFF }, { 0xF0, 0x41 }, 9 },
-    };
+struct HexEdit5 {
+    std::vector<BYTE> modified5;
+    size_t offset5;
+};
 
-    // Iterate through the edits
-    for (const auto& edit5 : edits5) {
-        // Search for the pattern in memory
-        for (DWORD i = 0; i < moduleSize - edit5.pattern.size(); ++i) {
-            if (memcmp(lpAddress + i, edit5.pattern.data(), edit5.pattern.size()) == 0) {
-                // Pattern found in memory
-                DX_PRINT("Pattern found in memory.")
+// index for hex edits for fps animations
 
-                    // Modify memory
-                    LPVOID lpAddressToWrite = lpAddress + i + edit5.offset;
-                SIZE_T numberOfBytesWritten;
-                DWORD oldProtect;
-                if (!VirtualProtectEx(GetCurrentProcess(), lpAddressToWrite, edit5.newValue.size(), PAGE_EXECUTE_READWRITE, &oldProtect)) {
-                    DX_ERROR("Failed to change memory protection.")
-                        return;
-                }
+HexEdit5 CreateHexEditFromAnimation(int animationIndex) {
+    HexEdit5 edit5;
 
-                BOOL result = WriteProcessMemory(GetCurrentProcess(), lpAddressToWrite, edit5.newValue.data(), edit5.newValue.size(), &numberOfBytesWritten);
-                if (!result || numberOfBytesWritten != edit5.newValue.size()) {
-                    std::cerr << "Failed to write memory." << std::endl;
-                    return;
-                }
+    switch (animationIndex) {
+    case 1:
+        edit5.modified5 = { 0xA1, 0x7C, 0x33, 0x7C, 0x00, 0x50, 0x68, 0x00, 0x00, 0xC8, 0x41, 0xE8, 0x40, 0x67, 0xFA, 0xFF };                 //25 fps
+        edit5.offset5 = 0;
+        break;
+    case 2:
+        edit5.modified5 = { 0xA1, 0x7C, 0x33, 0x7C, 0x00, 0x50, 0x68, 0x00, 0x00, 0xF0, 0x41, 0xE8, 0x40, 0x67, 0xFA, 0xFF };                 //30 fps
+        edit5.offset5 = 0;
+        break;
+    default:
+        DX_ERROR("Invalid animation index.")
 
-                // Restore original protection
-                DWORD dummy;
-                if (!VirtualProtectEx(GetCurrentProcess(), lpAddressToWrite, edit5.newValue.size(), oldProtect, &dummy)) {
-                    DX_ERROR("Failed to restore memory protection.")
-                        return;
-                }
-
-                DX_PRINT("Hex edited successfully.")
-                    break;
-            }
-        }
+            break;
     }
+
+    return edit5;
 }
 
-// Function to perform the hex edits
+void PerformHexEdit5(LPBYTE lpAddress, DWORD moduleSize, const HexEdit5& edit5) {
+    for (DWORD i = 0; i < moduleSize - edit5.modified5.size(); ++i) {
+        if (memcmp(lpAddress + i, commonHexEdit5.data(), commonHexEdit5.size()) == 0) {
+            DX_PRINT("Pattern found in memory.");
+
+            LPVOID lpAddressToWrite = lpAddress + i + edit5.offset5;
+            SIZE_T numberOfBytesWritten;
+            DWORD oldProtect;
+
+            // Change memory protection to allow writing
+            if (!VirtualProtect(lpAddressToWrite, edit5.modified5.size(), PAGE_EXECUTE_READWRITE, &oldProtect)) {
+                DX_ERROR("Failed to change memory protection.");
+                return;
+            }
+
+            BOOL result = WriteProcessMemory(GetCurrentProcess(), lpAddressToWrite, edit5.modified5.data(), edit5.modified5.size(), &numberOfBytesWritten);
+
+            // Restore original memory protection
+            if (!VirtualProtect(lpAddressToWrite, edit5.modified5.size(), oldProtect, &oldProtect)) {
+                DX_ERROR("Failed to restore memory protection.");
+                return;
+            }
+
+            if (!result || numberOfBytesWritten != edit5.modified5.size()) {
+                DX_ERROR("Failed to write memory.");
+                return;
+            }
+            DX_PRINT("Hex edited successfully.");
+            return;
+        }
+    }
+    DX_PRINT("Pattern not found in memory.");
+}
+
 void PerformHexEdits5() {
-    // Get the handle to the current module
     HMODULE hModule = GetModuleHandle(NULL);
     if (hModule == NULL) {
         DX_ERROR("Failed to get module handle.")
@@ -514,7 +524,7 @@ void PerformHexEdits5() {
 
     // Get the module information
     LPBYTE lpAddress = reinterpret_cast<LPBYTE>(hModule);
-    DWORD moduleSize = 0; // Placeholder for module size
+    DWORD moduleSize = 0;
     TCHAR szFileName[MAX_PATH];
     if (GetModuleFileNameEx(GetCurrentProcess(), hModule, szFileName, MAX_PATH)) {
         moduleSize = GetFileSize(szFileName, NULL);
@@ -524,12 +534,31 @@ void PerformHexEdits5() {
             return;
     }
 
-    // Perform the hex edit
-    PerformHexEdit5(lpAddress, moduleSize);
+    // ini
+    char path[MAX_PATH];
+    HMODULE hm = NULL;
+    GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (LPCSTR)&Direct3DCreate9, &hm);
+    GetModuleFileNameA(hm, path, sizeof(path));
+    strcpy(strrchr(path, '\\'), "\\d3d9.ini");
+
+    // Read animation index from the INI file
+    int animationIndex = GetPrivateProfileInt("FPSANIMATIONS", "fpsanimations", 0, path);
+    if (animationIndex == 0) {
+        DX_ERROR("Failed to read animation index from INI file.")
+            return;
+    }
+
+    HexEdit5 edit5 = CreateHexEditFromAnimation(animationIndex);
+    if (edit5.modified5.empty()) {
+        DX_ERROR("Failed to create hex edit for animation index: ")
+            return;
+    }
+
+    PerformHexEdit5(lpAddress, moduleSize, edit5);
 }
 
-// chip - 5: fps animations
-// 
+// chip - 5: fps animation
+
 //=======================================================================================================================================================================================
 
 //=======================================================================================================================================================================================
