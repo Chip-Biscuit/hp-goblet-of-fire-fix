@@ -12,6 +12,8 @@ simply go to releases download hp4fix.zip put the d3d9.dll and d3d9.ini into you
 
 you can edit settings in d3d9.ini 
 
+Default for FPS cap is 60 you can change it as you like or uncap with 0
+
 Default for resolution is 2 (1920 x 1080) 
 
 Default for fov is (0) origional 114 you can replace 0 with your number higher than 114 will zoom it out in game.
