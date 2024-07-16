@@ -1,13 +1,5 @@
 # hp-goblet-of-fire-fix
 
-This is the Harry Potter and the Goblet of Fire d3d9 wrapper which is based from 13AG d3d9.dll wrapper
-
-https://github.com/ThirteenAG/d3d9-wrapper
-
-Please see this youtube video for an in depth tutorial on the fix
-
-https://www.youtube.com/watch?v=gMjPTeB_tHI&t=0s
-
 simply go to releases download hp4fix.zip put the d3d9.dll and d3d9.ini into your game folder next to the game exe and your good to go 
 
 you can edit settings in d3d9.ini 
@@ -31,3 +23,12 @@ brought to you by Fix Enhancers
 Team: 
 
 Chip, JokerAlex21, Blankname.
+
+This is the Harry Potter and the Goblet of Fire d3d9 wrapper which is based from 13AG d3d9.dll wrapper
+
+https://github.com/ThirteenAG/d3d9-wrapper
+
+Please see this youtube video for an in depth tutorial on the fix
+
+https://www.youtube.com/watch?v=gMjPTeB_tHI&t=0s
+
