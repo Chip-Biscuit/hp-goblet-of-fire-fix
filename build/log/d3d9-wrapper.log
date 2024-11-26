@@ -1,0 +1,67 @@
+﻿  IDirect3D9Ex.cpp
+  IDirect3DCubeTexture9.cpp
+  IDirect3DDevice9Ex.cpp
+  IDirect3DIndexBuffer9.cpp
+  IDirect3DPixelShader9.cpp
+  IDirect3DQuery9.cpp
+  IDirect3DStateBlock9.cpp
+  IDirect3DSurface9.cpp
+  IDirect3DSwapChain9Ex.cpp
+  IDirect3DTexture9.cpp
+  IDirect3DVertexBuffer9.cpp
+  IDirect3DVertexDeclaration9.cpp
+  IDirect3DVertexShader9.cpp
+  IDirect3DVolume9.cpp
+  IDirect3DVolumeTexture9.cpp
+  InterfaceQuery.cpp
+  dllmain.cpp
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(191,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(304,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(555,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(604,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(781,29): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(781,29): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(781,34): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(781,34): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(781,39): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(781,39): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(781,51): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(781,51): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(782,27): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(782,27): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(782,32): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(782,32): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(782,39): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(782,39): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(782,51): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(782,51): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(783,29): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(783,29): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(783,34): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(783,34): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(783,39): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(783,39): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(783,51): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(783,51): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(784,27): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(784,27): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(784,32): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(784,32): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(784,39): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(784,39): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(784,51): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(784,51): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(785,27): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(785,27): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(785,30): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(785,30): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(785,35): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(785,35): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(785,47): warning C4838: conversion from 'FLOAT' to 'LONG' requires a narrowing conversion
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(785,47): warning C4244: 'initializing': conversion from 'FLOAT' to 'LONG', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(776,21): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(801,44): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\source\dllmain.cpp(1580,13): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+     Creating library ..\data\d3d9.lib and object ..\data\d3d9.exp
+  d3d9-wrapper.vcxproj -> C:\Users\Chip\Desktop\Fixes\Source Code  Release-18-06-24 V1.0\hp-goblet-of-fire-fix-main\hp-goblet-of-fire-fix-main\data\d3d9.dll
