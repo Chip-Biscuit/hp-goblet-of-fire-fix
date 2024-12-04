@@ -2,6 +2,8 @@
 
 This is the Harry Potter and the Goblet of Fire d3d9 wrapper.
 
+IMPORTANT READ THE READ ME FILE INCLUDED WITH THE DOWNLOAD
+
 Please see this youtube video for an in depth tutorial on the fix
 
 https://www.youtube.com/watch?v=gMjPTeB_tHI&t=0s
