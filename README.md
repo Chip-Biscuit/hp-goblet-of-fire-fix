@@ -1,8 +1,6 @@
 # hp-goblet-of-fire-fix
 
-This is the Harry Potter and the Goblet of Fire d3d9 wrapper which is based from 13AG d3d9.dll wrapper
-
-https://github.com/ThirteenAG/d3d9-wrapper
+This is the Harry Potter and the Goblet of Fire d3d9 wrapper.
 
 Please see this youtube video for an in depth tutorial on the fix
 
