@@ -22,9 +22,9 @@ Default for fpsanimation is 0 which is off or the origional game animation speed
 
 Default for aspect ratio is 1 which is (16:9) 
 
-if you would like to leave feedback or submit a bug please use the form provided:
+If you have any issues please go to discord for help 
 
-https://docs.google.com/forms/d/e/1FAIpQLSfB_JaV0byMWQr69lJmLK1ge9vRrBQQM7TqqucLpAp_6aIyBA/viewform?usp=sharing
+https://discord.gg/pZwkHrTF8X
 
 credit to Elisha Riedlinger for the base wrapper and 13 AG.
 
